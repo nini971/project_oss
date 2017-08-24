@@ -1,0 +1,30 @@
+@charset "utf-8";
+/* CSS Document */
+#formInsc {
+	width: 700px;
+	padding: 10px;
+	margin: auto;
+}
+#formInsc fieldset {
+	padding: 15px;
+	margin: 30px;
+}
+#formInsc p {
+	margin: 10px 0px;
+}
+#formInsc input[type='submit'] {
+	box-shadow: -1px -1px 2px 0px #7a9a78 inset;
+	border: solid 1px black;
+	background-color: rgba(157,204,155,1);
+	border-radius: 5px;
+	width: 80px;
+	font-family: 'Raleway', sans-serif;
+	font-size: 0.8rem;
+}
+#bouton {
+	padding: 0px 10px;
+	text-align: right;
+}
+#bouton input:hover {
+	cursor: pointer;
+}

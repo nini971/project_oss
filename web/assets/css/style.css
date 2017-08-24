@@ -1,0 +1,244 @@
+@charset "utf-8";
+html {
+	height: 100%;
+}
+body {
+	min-height: 100%;
+}
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body {
+	background: url(../img/bckgrd.jpg) no-repeat fixed;
+	background-size: cover;
+}
+#top_block form {
+	display: inline-block;
+}
+#top_block {
+	font-family: 'Raleway', sans-serif;
+	font-size: 0.8rem;
+	padding: 3px 10px;
+	border-radius: 0 0 5px 5px;
+	background-color: rgba(4,217,220,0.98);
+	text-align: right;
+	height: 8%;
+}
+#header input[type="password"] {
+	width: 100px;
+}
+header div form input[type="password"], header div form input[type="email"] {
+	border-radius: 4px;
+	border: solid 1px black;
+	background-color: rgba(255,255,255,0.85);
+}
+#header input[type="submit"], #header button, .infoCompte button, .button {
+	box-shadow: -1px -1px 2px 0px #7a9a78 inset;
+	border: solid 1px black;
+	background-color: rgba(157,204,155,1);
+	border-radius: 5px;
+	width: 100px;
+	font-family: 'Raleway', sans-serif;
+	font-size: 0.8rem;
+	cursor: pointer;
+}
+#logo img {
+	opacity: 0.90;
+	position: relative;
+	top: 70px;
+	left: 25px;
+	height: 180px;
+	width: auto;
+}
+#header {
+	border-bottom: solid 1px black;
+	position: relative;
+	background: url(../img/chasse.jpg) no-repeat;
+	background-size: cover;
+	height: 350px;
+}
+nav li {
+	display: inline-block;
+	list-style-type: none;
+}
+nav {
+	position: absolute;
+	width: 100%;
+	bottom: 0;
+	text-align: center;
+}
+nav a {
+	border-top: solid 1px black;
+	border-left: solid 1px black;
+	border-right: solid 1px black;
+	font-family: 'Josefin Sans', sans-serif;
+	padding: 7px 0;
+	color: black;
+	text-decoration: none;
+	margin: 0 10px;
+	height: 35px;
+	border-radius: 5px 5px 0 0;
+	background-color: aquamarine;
+	display: block;
+	width: 120px;
+	opacity: 0.85;
+}
+nav a:hover {
+	opacity: 1;
+	cursor: pointer;
+}
+nav li:nth-child(1) a {
+	background-color: rgba(175,219,195,0.95);
+}
+nav li:nth-child(2) a {
+	background-color: rgba(157,204,155,0.95);
+}
+nav li:nth-child(3) a {
+	background-color: rgba(134,178,184,0.95);
+}
+nav li:nth-child(4) a {
+	background-color: rgba(163,194,179,0.95);
+}
+nav li:nth-child(5) a {
+	background-color: rgba(210,224,209,0.95);
+}
+main {
+	padding: 50px 120px;
+	font-family: 'Raleway', sans-serif;
+	
+}
+.menuaccueil {
+	background-color: rgba(175,219,195,1);
+}
+.menucarte {
+	background-color: rgba(157,204,155,1);
+}
+.menuspot {
+	background-color: rgba(134,178,184,1);
+}
+.menuajout {
+	background-color: rgba(163,194,179,1);
+}
+.menuglossaire {
+	background-color: rgba(210,224,209,1);
+}
+section {
+	text-align: justify;
+}
+main>h1 {
+	width: 50%;
+	margin: auto;
+	margin-bottom: 20px;
+}
+p {
+	margin: 5px 0;
+	text-indent: 2em;
+}
+#menu .actif {
+	opacity: 1;
+}
+#header .noCheck, #header .noCheck {
+	background-color: #E17F81;
+}
+#header .noCheck:focus, #header .noCheck:focus {
+	background-color: rgba(255,255,255,0.85);
+}
+#infoCompte:hover {
+	cursor: pointer;
+}
+.infoCompte {
+	padding: 15px;
+	border: solid 1px black;
+}
+.infoCompte button {
+	margin: 0 10px;
+}
+.infoCompte aside {
+	padding: 0 30px;
+	text-align: right;
+}
+#modifierCompte {
+	margin: 5px 10px;
+}
+.noteEtoile {
+	background-image: url(../img/starFull.png);
+}
+/*-----------------*/
+/* NOTATION ETOILE */
+/*-----------------*/
+.rating {
+	overflow: hidden;
+	display: inline-block;
+}
+.rating-input {
+	position: absolute;
+	left: 0;
+	top: -50px;
+}
+.rating-star {
+	display: block;
+	float: right;
+	width: 16px;
+	height: 16px;
+	background: url('http://kubyshkin.ru/samples/star-rating/star.png') 0 -16px;
+}
+.rating-note {
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	background: url('http://kubyshkin.ru/samples/star-rating/star.png') 0 -16px;
+}
+.rating-star:hover, .rating-star:hover ~ .rating-star, .rating-input:checked ~ .rating-star, .rating-on {
+	background-position: 0 0;
+}
+/*-----FIN-----*/
+
+/*----FORM AJOUT SPOT----*/
+#fieldFormAddSpot {
+	padding: 15px;
+}
+#fieldFormAddSpot input {
+	margin-right: 10px;
+	margin-bottom: 10px;
+}
+.detailFish {
+	display: none;
+	padding: 20px;
+	border: solid 1px black;
+	border-radius: 5px;
+}
+.hiddenFish {
+	display: inline-block;
+}
+/*----FIN----*/
+/*----INFO SPOT----*/
+.infoSpot {
+	margin: 10px;
+	padding: 10px;
+	border: solid 1px black;
+	border-radius: 5px;
+	background-color: rgb(150, 223, 249);
+}
+.infoSpot fielset {
+	margin: 10px;
+	padding: 10px;
+}
+.infoSpot fieldset div {
+	margin: 5px;
+	padding: 5px;
+	border: solid 1px black;
+	border-radius: 5px;
+	background-color: rgba(0, 0, 0, 0.06);
+
+}
+.divpoissondansspot{
+}
+#map{
+	width: 100%;
+	height: 500px;
+}
+#container{
+	min-height: 100vh;
+}
