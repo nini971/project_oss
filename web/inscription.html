@@ -1,0 +1,55 @@
+<form id="formInsc" method="post" action="inscription.php" >
+  <fieldset>
+    <legend>Inscription</legend>
+    <p>
+      <label for="prenom">Prénom : </label>
+      <input type="text" name="prenom" id="prenom" maxlength="30" required/>
+      <label for="nom">Nom : </label>
+      <input type="text" name="nom" id="nom" maxlength="30" required/>
+    </p>
+    <p>
+      <label for="pseudo">Pseudo : </label>
+      <input type="text" name="pseudo" id="pseudo" maxlength="30" required/>
+    </p>
+    <p>
+      <label for="email_ins">Email : </label>
+      <input type="email" name="email" pattern="^[a-z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$" id="email_ins" maxlength="50" placeholder="exemple@gmail.com" required/>
+      <span id="email_check"></span>
+    </p>
+    <p>
+      <label for="password_ins">Mot de passe : </label>
+      <input type="password" name="password" id="password_ins" size="12" placeholder="******" required/>
+      <label for="password_confirm">Confirmation : </label>
+      <input type="password" name="password_confirm" id="password_confirm" onBlur="check();" size="12" placeholder="******" required/>
+      <span id="message"></span>
+    </p>
+    <p>
+      <label for="date_naiss">Date de naissance (jj/mm/aaaa) : </label>
+      <input type="date" name="date_naiss" id="date_naiss" required/>
+    </p>
+    <p>
+      <label for="favori">Lieux de chasse favori : </label>
+      <input type="text" name="favori" id="favori" maxlength="50" required/>
+    </p>
+    <p>
+      <label for="experience">Expérience : </label>
+      <select name="experience" id="experience">
+        <option name="debutant">Débutant</option>
+        <option name="intermediaire">Intermédiaire</option>
+        <option name="confirme">Confirmé</option>
+      </select>
+    </p>
+    <p>
+      <label for="type">Type de chasse favorite : </label>
+      <select name="type" id="type">
+        <option name="agachon">Agachon</option>
+        <option name="indienne">Indienne</option>
+        <option name="coulee">Coulée</option>
+      </select>
+    </p>
+    <div id="bouton">
+      <input type="submit" value="S'inscrire" name="inscrire" id="inscrire" disabled/>
+    </div>
+  </fieldset>
+</form>
+

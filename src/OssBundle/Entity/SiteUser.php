@@ -9,6 +9,7 @@
 namespace OssBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Class SiteUser
@@ -25,40 +26,52 @@ class SiteUser
     private $id;
     /**
      * @ORM\Column(type="string")
+     * @Assert\NotBlank()
      */
     private $lastName;
     /**
      * @ORM\Column(type="string")
+     * @Assert\NotBlank()
      */
     private $firstName;
     /**
      * @ORM\Column(type="string")
+     * @Assert\NotBlank()
      */
     private $pseudo;
     /**
      * @ORM\Column(type="string")
+     * @Assert\NotBlank()
      */
     private $email;
     /**
      * @ORM\Column(type="string")
+     * @Assert\NotBlank()
      */
     private $password;
+
     /**
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="date")
+     * @Assert\NotBlank()
      */
     private $birthday;
     /**
      * @ORM\Column(type="string")
+     * @Assert\NotBlank()
      */
     private $hunterPlace;
+
     /**
-     * @ORM\Column(type="string")
+     * @ORM\ManyToOne(targetEntity="OssBundle\Entity\Experience")
+     * @Assert\NotBlank()
      */
     private $experience;
+
     /**
-     * @ORM\Column(type="string")
+     * @ORM\ManyToOne(targetEntity="OssBundle\Entity\HunterType")
+     * @Assert\NotBlank()
      */
-    private $status;
+    private $hunterType;
 
     /**
      * @ORM\OneToMany(targetEntity="OssBundle\Entity\Spot", mappedBy="siteUser")
@@ -276,54 +289,6 @@ class SiteUser
     }
 
     /**
-     * Set experience
-     *
-     * @param string $experience
-     *
-     * @return SiteUser
-     */
-    public function setExperience($experience)
-    {
-        $this->experience = $experience;
-
-        return $this;
-    }
-
-    /**
-     * Get experience
-     *
-     * @return string
-     */
-    public function getExperience()
-    {
-        return $this->experience;
-    }
-
-    /**
-     * Set status
-     *
-     * @param string $status
-     *
-     * @return SiteUser
-     */
-    public function setStatus($status)
-    {
-        $this->status = $status;
-
-        return $this;
-    }
-
-    /**
-     * Get status
-     *
-     * @return string
-     */
-    public function getStatus()
-    {
-        return $this->status;
-    }
-
-    /**
      * Add spot
      *
      * @param \OssBundle\Entity\Spot $spot
@@ -525,5 +490,53 @@ class SiteUser
     public function getFish()
     {
         return $this->fish;
+    }
+
+    /**
+     * Set experience
+     *
+     * @param \OssBundle\Entity\Experience $experience
+     *
+     * @return SiteUser
+     */
+    public function setExperience(\OssBundle\Entity\Experience $experience = null)
+    {
+        $this->experience = $experience;
+
+        return $this;
+    }
+
+    /**
+     * Get experience
+     *
+     * @return \OssBundle\Entity\Experience
+     */
+    public function getExperience()
+    {
+        return $this->experience;
+    }
+
+    /**
+     * Set hunterType
+     *
+     * @param \OssBundle\Entity\HunterType $hunterType
+     *
+     * @return SiteUser
+     */
+    public function setHunterType(\OssBundle\Entity\HunterType $hunterType = null)
+    {
+        $this->hunterType = $hunterType;
+
+        return $this;
+    }
+
+    /**
+     * Get hunterType
+     *
+     * @return \OssBundle\Entity\HunterType
+     */
+    public function getHunterType()
+    {
+        return $this->hunterType;
     }
 }

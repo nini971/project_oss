@@ -39,6 +39,9 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module" module-name="Projet V2" />
+    <orderEntry type="module" module-name="Projet V2" />
+    <orderEntry type="module" module-name="project" />
     <orderEntry type="module-library">
       <library name="PHARS">
         <CLASSES>
@@ -51,7 +54,6 @@
         </SOURCES>
       </library>
     </orderEntry>
-    <orderEntry type="module" module-name="Projet V2" />
-    <orderEntry type="module" module-name="Projet V2" />
+    <orderEntry type="module" module-name="Poo" />
   </component>
 </module>
