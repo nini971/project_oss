@@ -20,9 +20,9 @@ class SiteUserType extends AbstractType
         $builder
             ->add('lastName')
             ->add('firstName')
-            ->add('pseudo')
+            ->add('username')
             ->add('email')
-            ->add('password', RepeatedType::class, array(
+            ->add('plainPassword', RepeatedType::class, array(
                 'type' => PasswordType::class,
                 'invalid_message' => 'The password fields must match.',
                 'options' => array('attr' => array('class' => 'password-field')),

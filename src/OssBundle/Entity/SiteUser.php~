@@ -9,6 +9,7 @@
 namespace OssBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use FOS\UserBundle\Model\User as BaseUser;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
@@ -16,92 +17,78 @@ use Symfony\Component\Validator\Constraints as Assert;
  * @package OssBundle\Entity
  * @ORM\Entity()
  */
-class SiteUser
+class SiteUser extends BaseUser
 {
     /**
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      * @ORM\Column(type="bigint")
      */
-    private $id;
+    protected $id;
     /**
      * @ORM\Column(type="string")
      * @Assert\NotBlank()
      */
-    private $lastName;
+    protected $lastName;
     /**
      * @ORM\Column(type="string")
      * @Assert\NotBlank()
      */
-    private $firstName;
-    /**
-     * @ORM\Column(type="string")
-     * @Assert\NotBlank()
-     */
-    private $pseudo;
-    /**
-     * @ORM\Column(type="string")
-     * @Assert\NotBlank()
-     */
-    private $email;
-    /**
-     * @ORM\Column(type="string")
-     * @Assert\NotBlank()
-     */
-    private $password;
+    protected $firstName;
 
     /**
      * @ORM\Column(type="date")
      * @Assert\NotBlank()
      */
-    private $birthday;
+    protected $birthday;
     /**
      * @ORM\Column(type="string")
      * @Assert\NotBlank()
      */
-    private $hunterPlace;
+    protected $hunterPlace;
 
     /**
      * @ORM\ManyToOne(targetEntity="OssBundle\Entity\Experience")
      * @Assert\NotBlank()
      */
-    private $experience;
+    protected $experience;
 
     /**
      * @ORM\ManyToOne(targetEntity="OssBundle\Entity\HunterType")
      * @Assert\NotBlank()
      */
-    private $hunterType;
+    protected $hunterType;
 
     /**
      * @ORM\OneToMany(targetEntity="OssBundle\Entity\Spot", mappedBy="siteUser")
      */
-    private $spot;
+    protected $spot;
     /**
      * @ORM\OneToMany(targetEntity="OssBundle\Entity\Comment", mappedBy="siteUser")
      */
-    private $comment;
+    protected $comment;
     /**
      * @ORM\OneToMany(targetEntity="OssBundle\Entity\Message", mappedBy="siteUserPost")
      */
-    private $messagePost;
+    protected $messagePost;
     /**
      * @ORM\OneToMany(targetEntity="OssBundle\Entity\Message", mappedBy="siteUserReceive")
      */
-    private $messageReceive;
+    protected $messageReceive;
     /**
      * @ORM\OneToMany(targetEntity="OssBundle\Entity\FishInSpot", mappedBy="siteUser")
      */
-    private $fishInSpot;
+    protected $fishInSpot;
     /**
      *@ORM\OneToMany(targetEntity="OssBundle\Entity\Fish", mappedBy="siteUser")
      */
-    private $fish;
+    protected $fish;
     /**
      * Constructor
      */
     public function __construct()
     {
+        parent::__construct();
         $this->spot = new \Doctrine\Common\Collections\ArrayCollection();
         $this->comment = new \Doctrine\Common\Collections\ArrayCollection();
         $this->messagePost = new \Doctrine\Common\Collections\ArrayCollection();

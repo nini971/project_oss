@@ -160,6 +160,7 @@ function majAccueil(evt) {
 function majTopBlock(e) {
     var topBlock = document.getElementById("top_block");
     var cible = e.target;
+    console.log(cible);
 
 
     if (cible.readyState == cible.DONE) {
@@ -196,7 +197,7 @@ function identification() {
     var req = new XMLHttpRequest();
 
     req.onreadystatechange = majTopBlock;
-    req.open('POST', 'topBlock.php');
+    req.open('POST', '/login');
     req.send();
 
 }

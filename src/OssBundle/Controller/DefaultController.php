@@ -20,7 +20,8 @@ class DefaultController extends Controller
         if ($session->get("id") != null){
             return $this->render('OssBundle:Default:index.html.twig', array("id"=>$session->get("id")));
         } else{
-            return $this->render('OssBundle:Default:index.html.twig', array("id"=>"not connected"));
+            $session->set("status", 0);
+            return $this->render('OssBundle:Default:index.html.twig', array("id"=>$session->get("status")));
         }
     }
 
@@ -34,6 +35,7 @@ class DefaultController extends Controller
 
         $form->handleRequest($request);
         if($form->isSubmitted() && $form->isValid()){
+            $siteUser->setEnabled(1);
             //Persister l'objet
             $em=$this->getDoctrine()->getManager();
             $em->persist($siteUser);
@@ -43,5 +45,14 @@ class DefaultController extends Controller
         }
 
         return $this->render('OssBundle:Default:inscription.html.twig', ["form"=>$form->createView()]);
+    }
+
+    /**
+     * @Route("/spots", name="oss.spots")
+     */
+    public function spotListAction()
+    {
+        $spots = $this->getDoctrine()->getRepository('OssBundle:Spot')->findAll();
+        return $this->render('OssBundle:Default:spots.html.twig', ["spots"=>$spots]);
     }
 }
