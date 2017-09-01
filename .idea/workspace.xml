@@ -2,28 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2b8a1706-bfca-49b4-851d-f04b7a53dca5" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Security/login_content.html.twig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/FOSUserBundle/views/layout.html.twig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/OssBundle/Resources/views/Default/spots.html.twig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/OssBundle/Resources/views/Default/topBlock.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Poo/Blog" afterPath="$PROJECT_DIR$/../Poo/Blog" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Poo/.idea/Poo.iml" afterPath="$PROJECT_DIR$/../Poo/.idea/Poo.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/AppKernel.php" afterPath="$PROJECT_DIR$/app/AppKernel.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/config.yml" afterPath="$PROJECT_DIR$/app/config/config.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/routing.yml" afterPath="$PROJECT_DIR$/app/config/routing.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/security.yml" afterPath="$PROJECT_DIR$/app/config/security.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/symfony_requirements" afterPath="$PROJECT_DIR$/bin/symfony_requirements" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.json" afterPath="$PROJECT_DIR$/composer.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.lock" afterPath="$PROJECT_DIR$/composer.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/OssBundle/Controller/DefaultController.php" afterPath="$PROJECT_DIR$/src/OssBundle/Controller/DefaultController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/OssBundle/Entity/SiteUser.php" afterPath="$PROJECT_DIR$/src/OssBundle/Entity/SiteUser.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/OssBundle/Form/SiteUserType.php" afterPath="$PROJECT_DIR$/src/OssBundle/Form/SiteUserType.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/OssBundle/Resources/views/Default/index.html.twig" afterPath="$PROJECT_DIR$/src/OssBundle/Resources/views/Default/index.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/css/style.css" afterPath="$PROJECT_DIR$/web/assets/css/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/javascript/main.js" afterPath="$PROJECT_DIR$/web/assets/javascript/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/config.php" afterPath="$PROJECT_DIR$/web/config.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/formConnect.php" afterPath="$PROJECT_DIR$/web/formConnect.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -35,153 +20,30 @@
   <component name="ComposerSettings" doNotAsk="true" />
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5">
-      <split-first>
-        <leaf>
-          <file leaf-file-name="DefaultController.php" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/OssBundle/Controller/DefaultController.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="556">
-                  <caret line="43" column="55" lean-forward="false" selection-start-line="43" selection-start-column="55" selection-end-line="43" selection-end-column="55" />
-                  <folding>
-                    <element signature="e#1431#1472#0#PHP" expanded="true" />
-                    <element signature="e#1667#1683#1#PHP" expanded="true" />
-                    <element signature="e#1726#1761#0#PHP" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="index.html.twig" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/OssBundle/Resources/views/Default/index.html.twig">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="466">
-                  <caret line="30" column="50" lean-forward="false" selection-start-line="30" selection-start-column="50" selection-end-line="30" selection-end-column="50" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="post-page.html.twig" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/../Poo/Blog/src/BlogBundle/Resources/views/Admin/post-page.html.twig">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="306">
-                  <caret line="18" column="24" lean-forward="false" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
-                  <folding>
-                    <element signature="e#20#48#0#Twig" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="spots.html.twig" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/OssBundle/Resources/views/Default/spots.html.twig">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="493">
-                  <caret line="29" column="58" lean-forward="false" selection-start-line="29" selection-start-column="58" selection-end-line="29" selection-end-column="58" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/web/assets/css/style.css">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="361">
-                  <caret line="24" column="43" lean-forward="false" selection-start-line="24" selection-start-column="43" selection-end-line="24" selection-end-column="43" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="Fish.php" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/OssBundle/Entity/Fish.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="527">
-                  <caret line="36" column="21" lean-forward="false" selection-start-line="36" selection-start-column="12" selection-end-line="36" selection-end-column="21" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="FishInSpot.php" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/OssBundle/Entity/FishInSpot.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="255">
-                  <caret line="32" column="21" lean-forward="false" selection-start-line="32" selection-start-column="12" selection-end-line="32" selection-end-column="21" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="Spot.php" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/OssBundle/Entity/Spot.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="697">
-                  <caret line="64" column="23" lean-forward="false" selection-start-line="64" selection-start-column="13" selection-end-line="64" selection-end-column="23" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="index.html.twig" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/../Poo/Blog/src/BlogBundle/Resources/views/Admin/index.html.twig">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="272">
-                  <caret line="16" column="39" lean-forward="false" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="39" />
-                  <folding>
-                    <element signature="e#631#640#0#Twig" expanded="true" />
-                    <element signature="e#751#762#0#Twig" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/web/assets/javascript/main.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="310">
-                  <caret line="165" column="41" lean-forward="false" selection-start-line="165" selection-start-column="41" selection-end-line="165" selection-end-column="41" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf>
-          <file leaf-file-name="spot.php" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/web/spot.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="493">
-                  <caret line="29" column="43" lean-forward="false" selection-start-line="29" selection-start-column="43" selection-end-line="29" selection-end-column="43" />
-                  <folding>
-                    <marker date="1488444985000" expanded="true" signature="131:149" ph="SELECT * FRO... spot" />
-                    <marker date="1488444985000" expanded="true" signature="367:411" ph="SELECT * FRO... utilisateur" />
-                    <marker date="1488444985000" expanded="true" signature="745:793" ph="SELECT * FRO... fishInSpot" />
-                    <marker date="1488444985000" expanded="true" signature="1032:1075" ph="SELECT * FRO... poisson" />
-                    <marker date="1488444985000" expanded="true" signature="1847:3334" ph="..." />
-                    <marker date="1488444985000" expanded="true" signature="1898:2374" ph="..." />
-                    <marker date="1488444985000" expanded="true" signature="1928:2366" ph="..." />
-                    <marker date="1488444985000" expanded="true" signature="2381:2845" ph="..." />
-                    <marker date="1488444985000" expanded="true" signature="2409:2837" ph="..." />
-                    <marker date="1488444985000" expanded="true" signature="2852:3328" ph="..." />
-                    <marker date="1488444985000" expanded="true" signature="2882:3320" ph="..." />
-                    <marker date="1488444985000" expanded="true" signature="3377:4208" ph="..." />
-                    <marker date="1488444985000" expanded="true" signature="3392:3947" ph="..." />
-                    <marker date="1488444985000" expanded="true" signature="3487:3931" ph="..." />
-                    <marker date="1488444985000" expanded="true" signature="3510:3927" ph="..." />
-                    <marker date="1488444985000" expanded="true" signature="3962:4193" ph="..." />
-                    <marker date="1488444985000" expanded="true" signature="4094:4177" ph="..." />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="DefaultController.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/OssBundle/Controller/DefaultController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="664">
+              <caret line="62" column="39" lean-forward="true" selection-start-line="62" selection-start-column="39" selection-end-line="62" selection-end-column="39" />
+              <folding>
+                <element signature="e#2002#2018#1#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AppKernel.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/AppKernel.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="19" column="48" lean-forward="false" selection-start-line="19" selection-start-column="48" selection-end-line="19" selection-end-column="48" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -220,7 +82,6 @@
         <option value="$PROJECT_DIR$/src/OssBundle/Entity/Experience.php" />
         <option value="$PROJECT_DIR$/src/OssBundle/Resources/views/Default/inscription.html.twig" />
         <option value="$PROJECT_DIR$/web/formConnect.php" />
-        <option value="$PROJECT_DIR$/app/AppKernel.php" />
         <option value="$PROJECT_DIR$/app/config/routing.yml" />
         <option value="$PROJECT_DIR$/app/config/parameters.yml" />
         <option value="$PROJECT_DIR$/src/OssBundle/Form/SiteUserType.php" />
@@ -232,9 +93,10 @@
         <option value="$PROJECT_DIR$/app/Resources/FOSUserBundle/views/layout.html.twig" />
         <option value="$PROJECT_DIR$/web/assets/javascript/main.js" />
         <option value="$PROJECT_DIR$/src/OssBundle/Resources/views/Default/index.html.twig" />
-        <option value="$PROJECT_DIR$/src/OssBundle/Controller/DefaultController.php" />
         <option value="$PROJECT_DIR$/src/OssBundle/Resources/views/Default/spots.html.twig" />
         <option value="$PROJECT_DIR$/web/assets/css/style.css" />
+        <option value="$PROJECT_DIR$/app/AppKernel.php" />
+        <option value="$PROJECT_DIR$/src/OssBundle/Controller/DefaultController.php" />
       </list>
     </option>
   </component>
@@ -246,10 +108,10 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
+    <option name="x" value="1912" />
     <option name="y" value="-8" />
     <option name="width" value="1936" />
-    <option name="height" value="1056" />
+    <option name="height" value="1096" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -269,7 +131,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -292,7 +153,7 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
+              <option name="myItemId" value="src" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -306,11 +167,11 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
+              <option name="myItemId" value="src" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
+              <option name="myItemId" value="OssBundle" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -324,21 +185,36 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
+              <option name="myItemId" value="src" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
+              <option name="myItemId" value="OssBundle" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
+              <option name="myItemId" value="Controller" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="project_oss" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="project_oss" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -449,14 +325,15 @@
       <workItem from="1503649383645" duration="107000" />
       <workItem from="1503649519953" duration="17808000" />
       <workItem from="1503906002132" duration="19537000" />
+      <workItem from="1504268435836" duration="2027000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="46720000" />
+    <option name="totallyTimeSpent" value="48747000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="1912" y="-8" width="1936" height="1096" extended-state="6" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15364583" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -499,10 +376,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="17" column="5" lean-forward="true" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
-          <folding>
-            <marker date="1503573897000" expanded="true" signature="1038:1088" ph="SELECT email... utilisateur" />
-            <marker date="1503573897000" expanded="true" signature="1257:1451" ph="INSERT INTO utilisateur... " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -592,7 +465,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -608,7 +480,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="26" lean-forward="false" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="26" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -616,7 +487,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -624,15 +494,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/AppKernel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="19" column="48" lean-forward="false" selection-start-line="19" selection-start-column="48" selection-end-line="19" selection-end-column="48" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -640,7 +501,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="8" column="26" lean-forward="false" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -666,7 +526,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="21" column="30" lean-forward="false" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="30" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -674,7 +533,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-16146">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -682,9 +540,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1486638577000" expanded="true" signature="462:508" ph="SELECT * FRO... utilisateur" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -692,7 +547,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="40" lean-forward="false" selection-start-line="6" selection-start-column="40" selection-end-line="6" selection-end-column="40" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -700,7 +554,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="3" column="182" lean-forward="false" selection-start-line="3" selection-start-column="7" selection-end-line="3" selection-end-column="182" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -708,7 +561,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="4" lean-forward="false" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="4" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -716,7 +568,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
           <caret line="24" column="34" lean-forward="false" selection-start-line="23" selection-start-column="16" selection-end-line="24" selection-end-column="34" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -724,7 +575,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
           <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -732,7 +582,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
           <caret line="23" column="28" lean-forward="false" selection-start-line="23" selection-start-column="28" selection-end-line="23" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -748,9 +597,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="23" lean-forward="false" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
-          <folding>
-            <element signature="e#170#193#0#Twig" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -758,9 +604,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="30" selection-end-column="11" />
-          <folding>
-            <element signature="e#527#550#0#Twig" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -768,9 +611,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding>
-            <element signature="e#12#37#0#Twig" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -778,9 +618,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="32" lean-forward="false" selection-start-line="2" selection-start-column="32" selection-end-line="2" selection-end-column="32" />
-          <folding>
-            <element signature="e#527#550#0#Twig" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -788,9 +625,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="10" column="10" lean-forward="false" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="10" />
-          <folding>
-            <marker date="1503923476680" expanded="false" signature="198:222" ph="/logout" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -798,9 +632,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="3" column="20" lean-forward="true" selection-start-line="3" selection-start-column="20" selection-end-line="3" selection-end-column="20" />
-          <folding>
-            <element signature="e#20#48#0#Twig" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -816,7 +647,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="17" column="24" lean-forward="false" selection-start-line="17" selection-start-column="24" selection-end-line="17" selection-end-column="24" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -824,7 +654,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="14" column="35" lean-forward="false" selection-start-line="14" selection-start-column="35" selection-end-line="14" selection-end-column="35" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -832,30 +661,15 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="16" column="39" lean-forward="false" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="39" />
-          <folding>
-            <element signature="e#631#640#0#Twig" expanded="true" />
-            <element signature="e#751#762#0#Twig" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/assets/javascript/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="310">
+        <state relative-caret-position="2805">
           <caret line="165" column="41" lean-forward="false" selection-start-line="165" selection-start-column="41" selection-end-line="165" selection-end-column="41" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/OssBundle/Controller/DefaultController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="556">
-          <caret line="43" column="55" lean-forward="false" selection-start-line="43" selection-start-column="55" selection-end-line="43" selection-end-column="55" />
-          <folding>
-            <element signature="e#1431#1472#0#PHP" expanded="true" />
-            <element signature="e#1667#1683#1#PHP" expanded="true" />
-            <element signature="e#1726#1761#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -863,15 +677,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="18" column="24" lean-forward="false" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
-          <folding>
-            <element signature="e#20#48#0#Twig" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/OssBundle/Resources/views/Default/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="466">
+        <state relative-caret-position="510">
           <caret line="30" column="50" lean-forward="false" selection-start-line="30" selection-start-column="50" selection-end-line="30" selection-end-column="50" />
           <folding />
         </state>
@@ -879,7 +691,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/OssBundle/Entity/Spot.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="697">
+        <state relative-caret-position="1003">
           <caret line="64" column="23" lean-forward="false" selection-start-line="64" selection-start-column="13" selection-end-line="64" selection-end-column="23" />
           <folding />
         </state>
@@ -895,7 +707,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/OssBundle/Entity/FishInSpot.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
+        <state relative-caret-position="459">
           <caret line="32" column="21" lean-forward="false" selection-start-line="32" selection-start-column="12" selection-end-line="32" selection-end-column="21" />
           <folding />
         </state>
@@ -903,7 +715,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/assets/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
+        <state relative-caret-position="408">
           <caret line="24" column="43" lean-forward="false" selection-start-line="24" selection-start-column="43" selection-end-line="24" selection-end-column="43" />
           <folding />
         </state>
@@ -940,6 +752,24 @@
         <state relative-caret-position="493">
           <caret line="29" column="58" lean-forward="false" selection-start-line="29" selection-start-column="58" selection-end-line="29" selection-end-column="58" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/AppKernel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="19" column="48" lean-forward="false" selection-start-line="19" selection-start-column="48" selection-end-line="19" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/OssBundle/Controller/DefaultController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="664">
+          <caret line="62" column="39" lean-forward="true" selection-start-line="62" selection-start-column="39" selection-end-line="62" selection-end-column="39" />
+          <folding>
+            <element signature="e#2002#2018#1#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

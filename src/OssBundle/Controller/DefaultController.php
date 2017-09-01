@@ -6,6 +6,7 @@ use OssBundle\Entity\SiteUser;
 use OssBundle\Form\SiteUserType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Session\Session;
 
@@ -54,5 +55,18 @@ class DefaultController extends Controller
     {
         $spots = $this->getDoctrine()->getRepository('OssBundle:Spot')->findAll();
         return $this->render('OssBundle:Default:spots.html.twig', ["spots"=>$spots]);
+    }
+
+    /**
+     * @Route("/getSpot", name="oss.getspot")
+     */
+    public function getSpotJsonAction()
+    {
+        $spots = $this->getDoctrine()->getRepository('OssBundle:Spot')->findAll();
+        $serializer = $this->get('jms_serializer');
+        $json = $serializer->serialize($spots, "json");
+        $jsonResponse = new JsonResponse();
+        $jsonResponse->setContent($json);
+        return $jsonResponse;
     }
 }
