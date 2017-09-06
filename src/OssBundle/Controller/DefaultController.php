@@ -2,13 +2,18 @@
 
 namespace OssBundle\Controller;
 
+use OssBundle\Entity\FishInSpot;
 use OssBundle\Entity\SiteUser;
+use OssBundle\Entity\Spot;
+use OssBundle\Form\FishInSpotType;
 use OssBundle\Form\SiteUserType;
+use OssBundle\Form\SpotType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Session\Session;
+use Symfony\Component\Validator\Constraints\Date;
 
 class DefaultController extends Controller
 {
@@ -58,15 +63,26 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/getSpot", name="oss.getspot")
+     * @Route("/addSpot", name="oss.addSpot")
      */
-    public function getSpotJsonAction()
+    public function addSpotAction(Request $request)
     {
-        $spots = $this->getDoctrine()->getRepository('OssBundle:Spot')->findAll();
-        $serializer = $this->get('jms_serializer');
-        $json = $serializer->serialize($spots, "json");
-        $jsonResponse = new JsonResponse();
-        $jsonResponse->setContent($json);
-        return $jsonResponse;
+        $fishs = $this->getDoctrine()->getRepository('OssBundle:Fish')->findAll();
+        $spot = new Spot();
+        $form =$this->createForm(SpotType::class, $spot);
+
+        $form->handleRequest($request);
+        if($form->isSubmitted() && $form->isValid()){
+            $user = $this->getUser();
+            $spot->setSiteUser($user);
+            //Persister l'objet
+            $em=$this->getDoctrine()->getManager();
+            $em->persist($spot);
+            $em->flush();
+
+            return $this->redirectToRoute("oss.index");
+        }
+
+        return $this->render('OssBundle:Default:addSpot.html.twig', ["form"=>$form->createView(), "fishs"=>$fishs]);
     }
 }

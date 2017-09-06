@@ -1,0 +1,82 @@
+{% form_theme form 'bootstrap_3_layout.html.twig' %}
+{{ form_start(form, {'attr': {'id':'form_spot'}}) }}
+
+<div class="col-sm-12">
+    <p class="control-group col-sm-12">
+        <label class="control-label">Name</label>
+        <span class="controls">{{ form_widget(form.name) }}</span>
+    </p>
+    <p class="control-group col-sm-12">
+        <label class="control-label">Type</label>
+        <span class="controls">{{ form_widget(form.spotType) }}</span>
+    </p>
+    <p class="control-group col-sm-12">
+        <label class="control-label">Access</label>
+        <span class="controls">{{ form_widget(form.spotAcces) }}</span>
+    </p>
+    <p class="control-group col-sm-3">
+        <label class="control-label">Latitude</label>
+        <span class="controls">{{ form_widget(form.lattitude) }}</span>
+    </p>
+    <p class="control-group col-sm-3">
+        <label class="control-label">Longitude</label>
+        <span class="controls">{{ form_widget(form.longitude) }}</span>
+    </p>
+
+    <p class="control-group col-sm-3">
+        <label class="control-label">Area</label>
+        <span class="controls">{{ form_widget(form.area) }}</span>
+    </p>
+
+    <p class="col-sm-12">
+        {% for fish in fishs %}
+            <label>{{ fish.fishName }}</label>
+            <input type="checkbox" name="{{ fish.fishName }}" class="checkFish" data-id="{{ fish.id }}">
+        {% endfor %}
+    </p>
+
+    <p class="col-sm-12">
+        <label class="control-label">Fish in Spot</label>
+        <ul id="fish-fields-list"
+            data-prototype="{{ form_widget(form.fishInSpot.vars.prototype)|e }}">
+            {{ form_widget(form.fishInSpot) }}
+            {% for fishInSpot in form.fishInSpot %}
+                <li>
+                    {{ form_errors(fishInSpot) }}
+                    {{ form_widget(fishInSpot) }}
+                </li>
+            {% endfor %}
+        </ul>
+    </p>
+
+    <p class="control-group col-sm-12">
+        <span class="controls">{{ form_widget(form.Submit) }}</span>
+    </p>
+</div>
+
+{{ form_end(form) }}
+
+{#<script type="text/javascript">#}
+    {#// keep track of how many email fields have been rendered#}
+    {#var fishInSpotCount = '{{ form.fishInSpot|length }}';#}
+
+    {#jQuery(document).ready(function() {#}
+        {#jQuery('#add-another-fish').click(function(e) {#}
+            {#e.preventDefault();#}
+
+            {#var fishList = jQuery('#ossbundle_spot_fishInSpot');#}
+
+            {#// grab the prototype template#}
+            {#var newWidget = fishList.attr('data-prototype');#}
+            {#// replace the "__name__" used in the id and name of the prototype#}
+            {#// with a number that's unique to your emails#}
+            {#// end name attribute looks like name="contact[emails][2]"#}
+            {#newWidget = newWidget.replace(/__name__/g, fishInSpotCount);#}
+            {#fishInSpotCount++;#}
+
+            {#// create a new list element and add it to the list#}
+            {#var newLi = jQuery('<li></li>').html(newWidget);#}
+            {#newLi.appendTo(fishList);#}
+        {#});#}
+    {#})#}
+{#</script>#}

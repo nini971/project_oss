@@ -64,6 +64,13 @@ class Area
      * @ORM\OneToMany(targetEntity="OssBundle\Entity\Spot", mappedBy="area")
      */
     private $spot;
+
+    function __toString()
+    {
+        return $this->getAreaName();
+    }
+
+
     /**
      * Constructor
      */
