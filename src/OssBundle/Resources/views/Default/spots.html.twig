@@ -1,0 +1,66 @@
+{% if app.user %}
+    {% for spot in spots %}
+        <section class="infoSpot row">
+            <article>
+                <h2>{{ spot.name }}</h2>
+                <p>Type : {{ spot.spotType }}</p>
+                <p>Acces :
+                    <span class="">
+                        {% for i in 1..5%}
+                            {% if i <= spot.spotAcces %}
+                                <label class="rating-note rating-on"></label>
+                            {% else %}
+                                <label class="rating-note"></label>
+                            {% endif %}
+                        {% endfor %}
+                    </span></p>
+            </article>
+            <article>
+                <p>Date d'ajout : {{ spot.dateAdd | date }}</p>
+                <p>Ajouter par : {{ spot.siteUser.username }}</p>
+                <fieldset>
+                    <legend>Liste des poissons</legend>
+                    {% for fish in spot.fishInSpot %}
+                        <div class="divpoissondansspot col-sm-4">
+                            <h3>{{ fish.fish.fishName }}</h3>
+                            <p>Présence :
+                                <span class="">
+        		                     {% for i in 1..5%}
+                                         {% if i <= fish.existence %}
+                                             <label class="rating-note rating-on"></label>
+                                         {% else %}
+                                             <label class="rating-note"></label>
+                                         {% endif %}
+                                     {% endfor %}
+                                </span>
+                            </p>
+                            <p>Taille :
+                                <span class="">
+                                    {% for i in 1..5%}
+                                        {% if i <= fish.size %}
+                                            <label class="rating-note rating-on"></label>
+                                         {% else %}
+                                            <label class="rating-note"></label>
+                                        {% endif %}
+                                    {% endfor %}
+    		                    </span>
+                            </p>
+                            <p>Attitude :
+                                <span class="">
+                                    {% for i in 1..5%}
+                                        {% if i <= fish.attitude %}
+                                            <label class="rating-note rating-on"></label>
+                                         {% else %}
+                                            <label class="rating-note"></label>
+                                        {% endif %}
+                                    {% endfor %}
+    		                    </span>
+                            </p></div>
+                    {% endfor %}
+                </fieldset>
+            </article>
+        </section>
+    {% endfor %}
+{% else %}
+    Vous n'êtes pas connecté !
+{% endif %}

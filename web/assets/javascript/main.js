@@ -5,6 +5,11 @@ var tabPage = ['accueil.php', 'carte.php', 'spot.php', 'ajoutSpot.php', 'glossai
 // FONCTION QUI AFFICHE LE DETAIL DES IMAGES DANS AJOUTSPOT
 function afficheDetailFish(e) {
     var cible = e.target;
+    if (cible.checkbox.valueOf()){
+
+    } else {
+
+    }
     var id = cible.dataset.id;
     var elementLi = document.getElementById('id_fish_' + id);
     elementLi.classList.toggle('hiddenFish');
@@ -126,18 +131,58 @@ function majAccueil(evt) {
                 })
                 init_maj();
             }
+            if (jQuery('#form_spot')){
+
+                var tabFish = document.getElementsByClassName('checkFish');
+                for (var i = 0; i < tabFish.length; i++) {
+                    tabFish[i].onchange = afficheDetailFish;
+                }
+
+                $("#form_spot").submit( function(event) {
+                    // Eviter le comportement par défaut (soumettre le formulaire)
+                    console.log("le form est submit");
+
+                    event.preventDefault();
+                    var $this = $(this);
+                    console.log($this.serialize());
+                    //Ici on peut ajouter un loader...
+                    $.ajax({
+                        url: '/addSpot',
+                        type: 'POST',
+                        data: $this.serialize(),
+                        success: function(result){
+                        }
+                    });
+                })
+                var fishInSpotCount = 0;
+
+                jQuery(document).ready(function() {
+                    jQuery('#add-another-fish').click(function(e) {
+                        e.preventDefault();
+
+                        var dataForm = jQuery('#ossbundle_spot_fishInSpot');
+                        var fishList = jQuery('#fish-fields-list');
+
+                        // grab the prototype template
+                        var newWidget = dataForm.attr('data-prototype');
+                        // replace the "__name__" used in the id and name of the prototype
+                        // with a number that's unique to your emails
+                        // end name attribute looks like name="contact[emails][2]"
+                        newWidget = newWidget.replace(/__name__/g, fishInSpotCount);
+                        fishInSpotCount++;
+
+                        // create a new list element and add it to the list
+                        var newLi = jQuery('<li></li>').html(newWidget);
+                        newLi.appendTo(fishList);
+                    });
+                })
+            }
             var modifCompt = document.getElementById("modifier");
             if (modifCompt) {
                 modifCompt.onclick = changePage;
             }
             var addSpot = document.getElementById('detailFishForm');
-            if (addSpot) {
-                var tabFish = document.getElementsByClassName('checkFish');
-                console.log('debut detail fish' + tabFish[0]);
-                for (var i = 0; i < tabFish.length; i++) {
-                    tabFish[i].onchange = afficheDetailFish;
-                }
-            }
+
             var mapgoogle = document.getElementById('map');
             if (mapgoogle) {
                 /*
@@ -159,6 +204,7 @@ function majAccueil(evt) {
 function majTopBlock(e) {
     var topBlock = document.getElementById("top_block");
     var cible = e.target;
+    console.log(cible);
 
 
     if (cible.readyState == cible.DONE) {
@@ -194,7 +240,7 @@ function identification() {
     var req = new XMLHttpRequest();
 
     req.onreadystatechange = majTopBlock;
-    req.open('POST', 'topBlock.php');
+    req.open('POST', '/login');
     req.send();
 
 }

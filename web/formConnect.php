@@ -19,5 +19,5 @@ if(isset($_SESSION["status"])){
   <input type="submit" value="Connexion" name="connexion" id="connexion"/>
 </form>
 <span>ou</span> <a id="inscription">
-<button data-lien="/inscription">Inscription</button>
+<button data-lien="/inscription" data-color="menuaccueil">Inscription</button>
 </a>

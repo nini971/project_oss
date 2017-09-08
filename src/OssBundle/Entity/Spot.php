@@ -40,11 +40,11 @@ class Spot
      */
     private $dateAdd;
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="float")
      */
     private $lattitude;
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="float")
      */
     private $longitude;
     /**
@@ -60,7 +60,7 @@ class Spot
      */
     private $siteUser;
     /**
-     * @ORM\OneToMany(targetEntity="OssBundle\Entity\FishInSpot", mappedBy="spot")
+     * @ORM\OneToMany(targetEntity="OssBundle\Entity\FishInSpot", mappedBy="spot",cascade={"persist", "remove"}, orphanRemoval=true)
      */
     private $fishInSpot;
     /**
@@ -68,6 +68,7 @@ class Spot
      */
     public function __construct()
     {
+        $this->dateAdd = round(microtime(true));
         $this->comment = new \Doctrine\Common\Collections\ArrayCollection();
         $this->fishInSpot = new \Doctrine\Common\Collections\ArrayCollection();
     }
@@ -318,6 +319,8 @@ class Spot
     public function addFishInSpot(\OssBundle\Entity\FishInSpot $fishInSpot)
     {
         $this->fishInSpot[] = $fishInSpot;
+        $fishInSpot->setSpot($this);
+        $fishInSpot->setSiteUser($this->getSiteUser());
 
         return $this;
     }

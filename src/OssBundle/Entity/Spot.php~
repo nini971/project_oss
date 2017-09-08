@@ -40,11 +40,11 @@ class Spot
      */
     private $dateAdd;
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="float")
      */
     private $lattitude;
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="float")
      */
     private $longitude;
     /**

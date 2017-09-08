@@ -44,6 +44,13 @@ class Fish
      * @ORM\OneToMany(targetEntity="OssBundle\Entity\FishInSpot", mappedBy="fish")
      */
     private $fishInSpot;
+
+    function __toString()
+    {
+        return $this->getFishName();
+    }
+
+
     /**
      * Constructor
      */
