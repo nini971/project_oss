@@ -110,7 +110,6 @@ function majAccueil(evt) {
                 console.log("page inscription");
 
                 $("#form_inscription").submit( function(event) {
-                    // Eviter le comportement par défaut (soumettre le formulaire)
                     console.log("le form est submit");
 
                     event.preventDefault();
@@ -167,7 +166,6 @@ function majTopBlock(e) {
             topBlock.innerHTML = cible.responseText;
             var ins = document.getElementById("inscription");
 
-            // TEST INSCRIPTION
             if (ins) ins.onclick = changePage;
 
 

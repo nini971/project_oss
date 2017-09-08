@@ -20,7 +20,8 @@ class DefaultController extends Controller
         if ($session->get("id") != null){
             return $this->render('OssBundle:Default:index.html.twig', array("id"=>$session->get("id")));
         } else{
-            return $this->render('OssBundle:Default:index.html.twig', array("id"=>"not connected"));
+            $session->set("status", 0);
+            return $this->render('OssBundle:Default:index.html.twig', array("id"=>$session->get("status")));
         }
     }
 
