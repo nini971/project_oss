@@ -1,7 +1,7 @@
 {% form_theme form 'bootstrap_3_layout.html.twig' %}
 {{ form_start(form, {'attr': {'id':'form_spot'}}) }}
 
-<div class="col-sm-12">
+<div class="row">
     <p class="control-group col-sm-12">
         <label class="control-label">Name</label>
         <span class="controls">{{ form_widget(form.name) }}</span>
@@ -27,27 +27,27 @@
         <label class="control-label">Area</label>
         <span class="controls">{{ form_widget(form.area) }}</span>
     </p>
-
+</div>
+<div>
     <p class="col-sm-12">
-        {% for fish in fishs %}
-            <label>{{ fish.fishName }}</label>
-            <input type="checkbox" name="{{ fish.fishName }}" class="checkFish" data-id="{{ fish.id }}">
+        <span id="form_prototype" class=""
+              data-prototype="{{ form_widget(form.fishInSpot.vars.prototype)|e }}">
+            Fish in Spot
+        </span><button class="btn btn-success" id="add-another-fish">Add fish</button>
+    </p>
+    <div id="list_fish_add">
+
+    </div>
+    <div id="fish-fields-list">
+        {{ form_widget(form.fishInSpot) }}
+        {% for fishInSpot in form.fishInSpot %}
+            <span>
+                {{ form_errors(fishInSpot) }}
+                {{ form_widget(fishInSpot) }}
+            </span>
         {% endfor %}
-    </p>
+    </div>
 
-    <p class="col-sm-12">
-        <label class="control-label">Fish in Spot</label>
-        <ul id="fish-fields-list"
-            data-prototype="{{ form_widget(form.fishInSpot.vars.prototype)|e }}">
-            {{ form_widget(form.fishInSpot) }}
-            {% for fishInSpot in form.fishInSpot %}
-                <li>
-                    {{ form_errors(fishInSpot) }}
-                    {{ form_widget(fishInSpot) }}
-                </li>
-            {% endfor %}
-        </ul>
-    </p>
 
     <p class="control-group col-sm-12">
         <span class="controls">{{ form_widget(form.Submit) }}</span>
@@ -56,27 +56,87 @@
 
 {{ form_end(form) }}
 
-{#<script type="text/javascript">#}
-    {#// keep track of how many email fields have been rendered#}
-    {#var fishInSpotCount = '{{ form.fishInSpot|length }}';#}
+<div id="modalFish" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title">Add Fish</h4>
+            </div>
+            <div class="modal-body">
+                <label for="select_fish">Fish : </label>
+                <select id="select_fish">
+                    {% for fish in fishs %}
+                        <option value={{ fish.id }}>{{ fish.fishName }}</option>
+                    {% endfor %}
+                </select>
+                <ul>
+                    <li class="detailFish">
+                        <label>Présence : </label>
+                        <span class="rating" id="rating_existence">
+                            <input type="radio" class="rating-input"
+                                   id="rating-input-1-5_existence" name="rating_existence" value="5">
+                            <label for="rating-input-1-5_existence" class="rating-star"></label>
+                            <input type="radio" class="rating-input"
+                                   id="rating-input-1-4_existence" name="rating_existence" value="4">
+                            <label for="rating-input-1-4_existence" class="rating-star"></label>
+                            <input type="radio" class="rating-input"
+                                   id="rating-input-1-3_existence" name="rating_existence" value="3">
+                            <label for="rating-input-1-3_existence" class="rating-star"></label>
+                            <input type="radio" class="rating-input"
+                                   id="rating-input-1-2_existence" name="rating_existence" value="2">
+                            <label for="rating-input-1-2_existence" class="rating-star"></label>
+                            <input type="radio" class="rating-input"
+                                   id="rating-input-1-1_existence" name="rating_existence" value="1">
+                            <label for="rating-input-1-1_existence" class="rating-star"></label>
+                        </span>
+                        <br>
+                        <label>Taille : </label>
+                        <span class="rating" id="rating_size">
+        <input type="radio" class="rating-input"
+               id="rating-input-1-5_size" name="rating_size" value="5">
+        <label for="rating-input-1-5_size" class="rating-star"></label>
+        <input type="radio" class="rating-input"
+               id="rating-input-1-4_size" name="rating_size" value="4">
+        <label for="rating-input-1-4_size" class="rating-star"></label>
+        <input type="radio" class="rating-input"
+               id="rating-input-1-3_size" name="rating_size" value="3">
+        <label for="rating-input-1-3_size" class="rating-star"></label>
+        <input type="radio" class="rating-input"
+               id="rating-input-1-2_size" name="rating_size" value="2">
+        <label for="rating-input-1-2_size" class="rating-star"></label>
+        <input type="radio" class="rating-input"
+               id="rating-input-1-1_size" name="rating_size" value="1">
+        <label for="rating-input-1-1_size" class="rating-star"></label>
+    </span>
+                        <br>
+                        <label>Attitude : </label>
+                        <span class="rating" id="rating_attitude">
+        <input type="radio" class="rating-input"
+               id="rating-input-1-5_atittude" name="rating_atittude" value="5">
+        <label for="rating-input-1-5_atittude" class="rating-star"></label>
+        <input type="radio" class="rating-input"
+               id="rating-input-1-4_atittude" name="rating_atittude" value="4">
+        <label for="rating-input-1-4_atittude" class="rating-star"></label>
+        <input type="radio" class="rating-input"
+               id="rating-input-1-3_atittude" name="rating_atittude" value="3">
+        <label for="rating-input-1-3_atittude" class="rating-star"></label>
+        <input type="radio" class="rating-input"
+               id="rating-input-1-2_atittude" name="rating_atittude" value="2">
+        <label for="rating-input-1-2_atittude" class="rating-star"></label>
+        <input type="radio" class="rating-input"
+               id="rating-input-1-1_atittude" name="rating_atittude" value="1">
+        <label for="rating-input-1-1_atittude" class="rating-star"></label>
+    </span>
+                    </li>
+                </ul>
 
-    {#jQuery(document).ready(function() {#}
-        {#jQuery('#add-another-fish').click(function(e) {#}
-            {#e.preventDefault();#}
-
-            {#var fishList = jQuery('#ossbundle_spot_fishInSpot');#}
-
-            {#// grab the prototype template#}
-            {#var newWidget = fishList.attr('data-prototype');#}
-            {#// replace the "__name__" used in the id and name of the prototype#}
-            {#// with a number that's unique to your emails#}
-            {#// end name attribute looks like name="contact[emails][2]"#}
-            {#newWidget = newWidget.replace(/__name__/g, fishInSpotCount);#}
-            {#fishInSpotCount++;#}
-
-            {#// create a new list element and add it to the list#}
-            {#var newLi = jQuery('<li></li>').html(newWidget);#}
-            {#newLi.appendTo(fishList);#}
-        {#});#}
-    {#})#}
-{#</script>#}
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button id="add_new_fish_valid" type="button" class="btn btn-success">Add</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

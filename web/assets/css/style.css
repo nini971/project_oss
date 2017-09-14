@@ -173,6 +173,7 @@ p {
 /* NOTATION ETOILE */
 /*-----------------*/
 .rating {
+	vertical-align: middle;
 	overflow: hidden;
 	display: inline-block;
 }
@@ -208,10 +209,7 @@ p {
 	margin-bottom: 10px;
 }
 .detailFish {
-	display: none;
-	padding: 20px;
-	border: solid 1px black;
-	border-radius: 5px;
+	text-decoration: none;
 }
 .hiddenFish {
 	display: inline-block;
