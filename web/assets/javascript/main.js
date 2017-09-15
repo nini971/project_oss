@@ -10,9 +10,13 @@ function displayFish(name, id) {
 }
 
 function deleteFishInFrom(id, name) {
+    console.log('suppresion du ' + name);
     $('#select_fish').append('<option value="'+ id +'">'+ name +'</option>');
-    console.log(id_fish_add);
+    console.log('<option value="'+ id +'">'+ name +'</option>');
+    console.log('contenu de list ID : ' + id_fish_add);
     id_fish_add.splice(id_fish_add.indexOf(id), 1);
+    console.log('contenu de list ID  après modif : ' + id_fish_add);
+
     console.log(data_post_form);
 
     var indexDataFish;
@@ -23,8 +27,6 @@ function deleteFishInFrom(id, name) {
         }
     });
 
-
-
     console.log(data_post_form);
 
     $('.btn_delete_fish').each(function (index, el) {
@@ -32,7 +34,7 @@ function deleteFishInFrom(id, name) {
             $(el).remove();
         }
     });
-    console.log(id_fish_add);
+    $('#add-another-fish').prop('disabled', false);
 }
 
 // FONCTION QUI AFFICHE LE DETAIL DES IMAGES DANS AJOUTSPOT
@@ -167,26 +169,27 @@ function majAccueil(evt) {
             }
             if (jQuery('#form_spot')){
                 data_post_form = [];
+                $('#ossbundle_spot_spotAcces').prop('required',false);
+                $('#ossbundle_spot_Submit').prop('disabled', true);
 
-
-                var tabFish = document.getElementsByClassName('checkFish');
-                for (var i = 0; i < tabFish.length; i++) {
-                    tabFish[i].onchange = afficheDetailFish;
-                }
-
+                // WHEN FORM IS SUBMIT
                 $("#form_spot").submit( function(event) {
                     // Eviter le comportement par défaut (soumettre le formulaire)
-                    console.log("le form est submit");
-
                     event.preventDefault();
+
                     var $this = $(this);
-                    var data =  $this.serialize()
+                    var data =  $this.serialize();
                     data_post_form.forEach (function(el){
                         data += encodeURI(el);
-                    })
+                    });
+                    var access = $('#rating_access input[type = radio]:checked').val();
+                    var spotAccess = encodeURI('&ossbundle_spot[spotAcces]=' + access);
+
+                    data = data.replace('&ossbundle_spot%5BspotAcces%5D=', spotAccess);
+                    data = data.replace('&rating_access=' + access, '');
+
                     console.log(data);
 
-                    //Ici on peut ajouter un loader...
                     $.ajax({
                         url: '/addSpot',
                         type: 'POST',
@@ -194,6 +197,7 @@ function majAccueil(evt) {
                         success: function(result){
                         }
                     });
+                    console.log("le form est submit");
                 })
                 var fishInSpotCount = 0;
 
@@ -201,21 +205,19 @@ function majAccueil(evt) {
                     jQuery('#add-another-fish').click(function(e) {
                         e.preventDefault();
                         $('#modalFish').modal('show');
-
-
-                        var dataForm = jQuery('#form_prototype');
-                        var fishList = jQuery('#fish-fields-list');
+                        fishInSpotCount++;
+                        // var dataForm = jQuery('#form_prototype');
+                        // var fishList = jQuery('#fish-fields-list');
 
                         // grab the prototype template
-                        var newWidget = dataForm.attr('data-prototype');
+                        // var newWidget = dataForm.attr('data-prototype');
                         // replace the "__name__" used in the id and name of the prototype
                         // with a number that's unique to your emails
                         // end name attribute looks like name="contact[emails][2]"
-                        newWidget = newWidget.replace(/__name__/g, fishInSpotCount);
-                        fishInSpotCount++;
+                        // newWidget = newWidget.replace(/__name__/g, fishInSpotCount);
 
                         // create a new list element and add it to the list
-                        var newLi = jQuery('<div></div>').html(newWidget);
+                        // var newLi = jQuery('<div></div>').html(newWidget);
                         //newLi.appendTo(fishList);
                     });
                 });
@@ -235,7 +237,10 @@ function majAccueil(evt) {
                         if(id_fish_add.indexOf($(el).attr('value')) != -1){
                             el.remove();
                         }
-                    });;
+                    });
+                    if($('#select_fish option').length == 0){
+                        $('#add-another-fish').prop('disabled', true);
+                    }
                 });
 
                 // quand la modal s'ouvre
@@ -247,10 +252,11 @@ function majAccueil(evt) {
 
 
                     // check si il reste des fish
-                    if($('#select_fish option').length == 0){
-                        $('.modal-body').html("<p>Il n'y a plus de poissons disponibles !</p>");
-                        $('#add_new_fish_valid').prop('disabled', true);
-                    }
+                    console.log('combien d\'option : ' + $('#select_fish option').length);
+                    // if($('#select_fish option').length == 0){
+                    //     $('.modal-body').append("<p>Il n'y a plus de poissons disponibles !</p>");
+                    //     $('#add_new_fish_valid').prop('disabled', true);
+                    // }
                 });
 
 
@@ -304,12 +310,12 @@ function majTopBlock(e) {
             var email = document.getElementById("email");
             var password = document.getElementById("password");
             if (email || password) {
-                email.onfocus = function () {
-                    email.classList.remove("noCheck");
-                };
-                password.onfocus = function () {
-                    password.classList.remove("noCheck");
-                };
+                // email.onfocus = function () {
+                //     email.classList.remove("noCheck");
+                // };
+                // password.onfocus = function () {
+                //     password.classList.remove("noCheck");
+                // };
             }
         }
     }

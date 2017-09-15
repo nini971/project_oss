@@ -9,6 +9,7 @@
 namespace OssBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Class Spot
@@ -37,6 +38,7 @@ class Spot
     private $spotAcces;
     /**
      * @ORM\Column(type="string")
+     *
      */
     private $dateAdd;
     /**

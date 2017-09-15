@@ -2,18 +2,14 @@
 
 namespace OssBundle\Controller;
 
-use OssBundle\Entity\FishInSpot;
 use OssBundle\Entity\SiteUser;
 use OssBundle\Entity\Spot;
-use OssBundle\Form\FishInSpotType;
 use OssBundle\Form\SiteUserType;
 use OssBundle\Form\SpotType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
-use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Session\Session;
-use Symfony\Component\Validator\Constraints\Date;
 
 class DefaultController extends Controller
 {
