@@ -173,12 +173,14 @@ p {
 /* NOTATION ETOILE */
 /*-----------------*/
 .rating {
+	vertical-align: middle;
 	overflow: hidden;
 	display: inline-block;
 }
 .rating-input {
+	visibility: hidden;
 	position: absolute;
-	left: 0;
+	left: 0px;
 	top: -50px;
 }
 .rating-star {
@@ -208,10 +210,7 @@ p {
 	margin-bottom: 10px;
 }
 .detailFish {
-	display: none;
-	padding: 20px;
-	border: solid 1px black;
-	border-radius: 5px;
+	text-decoration: none;
 }
 .hiddenFish {
 	display: inline-block;
@@ -245,4 +244,19 @@ p {
 }
 #container{
 	min-height: 100vh;
+}
+#form_spot .row{
+	margin: 10px 0;
+}
+#div_form_proto{
+	padding: 0 15px;
+}
+#add-another-fish{
+	float: right;
+	margin-top: -9px;
+	border-radius: 6px;
+}
+.btn_delete_fish{
+	margin-right: 10px;
+	margin-bottom: 10px;
 }

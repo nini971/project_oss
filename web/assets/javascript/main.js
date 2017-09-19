@@ -1,6 +1,41 @@
 'use strict';
 // JavaScript Document
 var tabPage = ['accueil.php', 'carte.php', 'spot.php', 'ajoutSpot.php', 'glossaire.php'];
+var id_fish_add = [];
+var data_post_form = [];
+// fonction qui affiche un nouveaux fish ajouter
+function displayFish(name, id) {
+    var str = '<span onclick="deleteFishInFrom('+id+',\''+name+'\')" class="btn_delete_fish btn btn-danger" id="div_'+id+'" data-id="'+id+'"> ' + name + '</span>';
+    return str;
+}
+
+function deleteFishInFrom(id, name) {
+    console.log('suppresion du ' + name);
+    $('#select_fish').append('<option value="'+ id +'">'+ name +'</option>');
+    console.log('<option value="'+ id +'">'+ name +'</option>');
+    console.log('contenu de list ID : ' + id_fish_add);
+    id_fish_add.splice(id_fish_add.indexOf(id), 1);
+    console.log('contenu de list ID  après modif : ' + id_fish_add);
+
+    console.log(data_post_form);
+
+    var indexDataFish;
+    data_post_form.forEach(function (el, index) {
+        if(el.indexOf('[fish]=' + id) !== -1){
+            data_post_form.splice(index,1);
+            indexDataFish = index;
+        }
+    });
+
+    console.log(data_post_form);
+
+    $('.btn_delete_fish').each(function (index, el) {
+        if ($(el).attr('data-id') == id){
+            $(el).remove();
+        }
+    });
+    $('#add-another-fish').prop('disabled', false);
+}
 
 // FONCTION QUI AFFICHE LE DETAIL DES IMAGES DANS AJOUTSPOT
 function afficheDetailFish(e) {
@@ -132,50 +167,99 @@ function majAccueil(evt) {
                 init_maj();
             }
             if (jQuery('#form_spot')){
+                data_post_form = [];
+                $('#ossbundle_spot_spotAcces').prop('required',false);
+                $('#ossbundle_spot_Submit').prop('disabled', true);
 
-                var tabFish = document.getElementsByClassName('checkFish');
-                for (var i = 0; i < tabFish.length; i++) {
-                    tabFish[i].onchange = afficheDetailFish;
-                }
-
+                // WHEN FORM IS SUBMIT
                 $("#form_spot").submit( function(event) {
                     // Eviter le comportement par défaut (soumettre le formulaire)
-                    console.log("le form est submit");
-
                     event.preventDefault();
+
                     var $this = $(this);
-                    console.log($this.serialize());
-                    //Ici on peut ajouter un loader...
+                    var data =  $this.serialize();
+                    data_post_form.forEach (function(el){
+                        data += encodeURI(el);
+                    });
+                    var access = $('#rating_access input[type = radio]:checked').val();
+                    var spotAccess = encodeURI('&ossbundle_spot[spotAcces]=' + access);
+
+                    data = data.replace('&ossbundle_spot%5BspotAcces%5D=', spotAccess);
+                    data = data.replace('&rating_access=' + access, '');
+
+                    console.log(data);
+
                     $.ajax({
                         url: '/addSpot',
                         type: 'POST',
-                        data: $this.serialize(),
+                        data: data,
                         success: function(result){
                         }
                     });
+                    console.log("le form est submit");
                 })
                 var fishInSpotCount = 0;
 
                 jQuery(document).ready(function() {
                     jQuery('#add-another-fish').click(function(e) {
                         e.preventDefault();
-
-                        var dataForm = jQuery('#ossbundle_spot_fishInSpot');
-                        var fishList = jQuery('#fish-fields-list');
+                        $('#modalFish').modal('show');
+                        fishInSpotCount++;
+                        // var dataForm = jQuery('#form_prototype');
+                        // var fishList = jQuery('#fish-fields-list');
 
                         // grab the prototype template
-                        var newWidget = dataForm.attr('data-prototype');
+                        // var newWidget = dataForm.attr('data-prototype');
                         // replace the "__name__" used in the id and name of the prototype
                         // with a number that's unique to your emails
                         // end name attribute looks like name="contact[emails][2]"
-                        newWidget = newWidget.replace(/__name__/g, fishInSpotCount);
-                        fishInSpotCount++;
+                        // newWidget = newWidget.replace(/__name__/g, fishInSpotCount);
 
                         // create a new list element and add it to the list
-                        var newLi = jQuery('<li></li>').html(newWidget);
-                        newLi.appendTo(fishList);
+                        // var newLi = jQuery('<div></div>').html(newWidget);
+                        //newLi.appendTo(fishList);
                     });
-                })
+                });
+
+                // quand on click sur Add pour un fish
+                $('#add_new_fish_valid').click(function (e) {
+                    id_fish_add.push($('#select_fish').val());
+                    data_post_form.push ('&ossbundle_spot[fishInSpot]['+fishInSpotCount+'][fish]='+$('#select_fish').val()+
+                        '&ossbundle_spot[fishInSpot]['+fishInSpotCount+'][existence]='+$('#rating_existence input[type = radio]:checked').val()+
+                        '&ossbundle_spot[fishInSpot]['+fishInSpotCount+'][size]='+$('#rating_size input[type = radio]:checked').val()+
+                        '&ossbundle_spot[fishInSpot]['+fishInSpotCount+'][attitude]='+$('#rating_attitude input[type = radio]:checked').val());
+                    $('#list_fish_add').append(displayFish($('#select_fish option:selected').prop('text'), $('#select_fish').val()));
+
+                    $('#modalFish').modal('hide')
+                    // remove les options déjà selected
+                    $('#select_fish option').each(function (index, el) {
+                        if(id_fish_add.indexOf($(el).attr('value')) != -1){
+                            el.remove();
+                        }
+                    });
+                    if($('#select_fish option').length == 0){
+                        $('#add-another-fish').prop('disabled', true);
+                    }
+                });
+
+                // quand la modal s'ouvre
+                $('#modalFish').on('show.bs.modal', function (e) {
+                    // désactivé les btn radio
+                    $('.detailFish input[type=radio]').each(function (index, el) {
+                        $(el).prop('checked', false);
+                    });
+
+
+                    // check si il reste des fish
+                    console.log('combien d\'option : ' + $('#select_fish option').length);
+                    // if($('#select_fish option').length == 0){
+                    //     $('.modal-body').append("<p>Il n'y a plus de poissons disponibles !</p>");
+                    //     $('#add_new_fish_valid').prop('disabled', true);
+                    // }
+                });
+
+
+
             }
             var modifCompt = document.getElementById("modifier");
             if (modifCompt) {
@@ -224,12 +308,12 @@ function majTopBlock(e) {
             var email = document.getElementById("email");
             var password = document.getElementById("password");
             if (email || password) {
-                email.onfocus = function () {
-                    email.classList.remove("noCheck");
-                };
-                password.onfocus = function () {
-                    password.classList.remove("noCheck");
-                };
+                // email.onfocus = function () {
+                //     email.classList.remove("noCheck");
+                // };
+                // password.onfocus = function () {
+                //     password.classList.remove("noCheck");
+                // };
             }
         }
     }
