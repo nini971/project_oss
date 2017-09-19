@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/../Poo/.idea/Poo.iml" filepath="$PROJECT_DIR$/../Poo/.idea/Poo.iml" />
-      <module fileurl="file://D:\wamp64\www\oss\.idea\Projet V2.iml" filepath="D:\wamp64\www\oss\.idea\Projet V2.iml" />
+      <module fileurl="file://C:\Users\Nico\Documents\Developpement\Projet OSS\Poo\.idea\Poo.iml" filepath="C:\Users\Nico\Documents\Developpement\Projet OSS\Poo\.idea\Poo.iml" />
+      <module fileurl="file://D:/wamp64/www/oss/.idea/Projet V2.iml" filepath="D:/wamp64/www/oss/.idea/Projet V2.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/oss.iml" filepath="$PROJECT_DIR$/.idea/oss.iml" />
-      <module fileurl="file://C:/wamp/www/project/.idea/project.iml" filepath="C:/wamp/www/project/.idea/project.iml" />
+      <module fileurl="file://C:\wamp\www\project\.idea\project.iml" filepath="C:\wamp\www\project\.idea\project.iml" />
     </modules>
   </component>
 </project>
