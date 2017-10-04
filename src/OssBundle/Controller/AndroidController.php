@@ -67,4 +67,20 @@ class AndroidController extends Controller
         $jsonResponse->setContent($json);
         return $jsonResponse;
     }
+
+    /**
+     * @Route("/getAreas", name="oss.getareas")
+     */
+    public function getAreasJsonAction()
+    {
+        $areas = $this->getDoctrine()->getRepository('OssBundle:Area')->findAll();
+        foreach ($areas as $area){
+            $area->setSpot(null);
+        }
+        $serializer = $this->get('jms_serializer');
+        $json = $serializer->serialize($areas, "json");
+        $jsonResponse = new JsonResponse();
+        $jsonResponse->setContent($json);
+        return $jsonResponse;
+    }
 }

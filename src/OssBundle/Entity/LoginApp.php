@@ -66,14 +66,4 @@ class LoginApp
     {
         $this->password = $password;
     }
-
-    /**
-     * @return mixed
-     */
-    public function getPasswordAsh()
-    {
-        return $this->passwordAsh;
-    }
-
-
 }

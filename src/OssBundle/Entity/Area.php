@@ -70,6 +70,11 @@ class Area
         return $this->getAreaName();
     }
 
+    public function setSpot($val)
+    {
+        $this->spot = $val;
+    }
+
 
     /**
      * Constructor
