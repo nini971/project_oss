@@ -71,6 +71,9 @@ class DefaultController extends Controller
         if($form->isSubmitted() && $form->isValid()){
             $user = $this->getUser();
             $spot->setSiteUser($user);
+            foreach ($spot->getFishInSpot() as $fish){
+                $fish->setSiteUser($user);
+            }
             //Persister l'objet
             $em=$this->getDoctrine()->getManager();
             $em->persist($spot);

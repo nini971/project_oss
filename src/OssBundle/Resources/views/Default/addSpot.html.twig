@@ -1,4 +1,4 @@
-
+{% if app.user %}
 {{ form_start(form, {'attr': {'id':'form_spot'}}) }}
 
 <div class="row">
@@ -170,3 +170,6 @@
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
+{% else %}
+    Vous n'êtes pas connecté !
+{% endif %}

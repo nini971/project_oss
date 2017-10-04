@@ -146,7 +146,8 @@ function majAccueil(evt) {
             console.log('Fini OK : ' + cible.responseURL);
             main.innerHTML = cible.responseText;
 
-            if (cible.responseURL == 'http://localhost:8000/inscription') {
+            // if (cible.responseURL == 'http://localhost:8000/inscriptio') {
+            if ( $("#form_inscription")) {
                 console.log("page inscription");
 
                 $("#form_inscription").submit( function(event) {
@@ -161,6 +162,10 @@ function majAccueil(evt) {
                         type: 'POST',
                         data: $this.serialize(),
                         success: function(result){
+                            document.open();
+                            document.write(result);
+                            document.close();
+                            //document.location.href=result;
                         }
                     });
                 })
@@ -169,7 +174,7 @@ function majAccueil(evt) {
             if (jQuery('#form_spot')){
                 data_post_form = [];
                 $('#ossbundle_spot_spotAcces').prop('required',false);
-                $('#ossbundle_spot_Submit').prop('disabled', true);
+                $('#ossbundle_spot_Submit').prop('disabled', false);
 
                 // WHEN FORM IS SUBMIT
                 $("#form_spot").submit( function(event) {
@@ -194,6 +199,9 @@ function majAccueil(evt) {
                         type: 'POST',
                         data: data,
                         success: function(result){
+                            document.open();
+                            document.write(result);
+                            document.close();
                         }
                     });
                     console.log("le form est submit");

@@ -28,8 +28,12 @@
                 <li class=""><a href="{{ path('oss.admin.users') }}">Users</a></li>
                 <li class=""><a href="{{ path('oss.admin.fishs') }}">Fish</a></li>
             </ul>
-
+            <a href="/logout" class="btn"
+               id="btn_disconnect">
+                <button class="btn btn-warning">Déconnection</button>
+            </a>
         </div><!-- /.navbar-collapse -->
+
     </div><!-- /.container-fluid -->
 </nav>
 <main>
@@ -57,7 +61,7 @@
                         <td>{{ spot.spotAcces }}</td>
                         <td>{{ spot.siteUser.username }}</td>
                         <td>{{ spot.area.areaName }}</td>
-                        <td><button id="displayFishBtn" class="btn btn-primary">Display Fish</button><a href="/deleteSpot/{{ spot.id }}"><button class="btn btn-danger">Delete</button> </a></td>
+                        <td><button id="displayFishBtn" class="btn btn-primary">Display Fish</button><a href="/licorne/deleteSpot/{{ spot.id }}"><button class="btn btn-danger">Delete</button> </a></td>
                     </tr>
                 {% endfor %}
             </tbody>
@@ -84,7 +88,7 @@
                     <td>{{ user.username }}</td>
                     <td>{{ user.firstName }}</td>
                     <td>{{ user.lastName }}</td>
-                    <td><button id="detailUserBtn" class="btn btn-primary">Detail</button><a href="/deleteUser/{{ user.id }}"><button class="btn btn-danger">Delete</button> </a></td>
+                    <td><button id="detailUserBtn" class="btn btn-primary">Detail</button><a href="/licorne/deleteUser/{{ user.id }}"><button class="btn btn-danger">Delete</button> </a></td>
                 </tr>
             {% endfor %}
             </tbody>
