@@ -11,7 +11,7 @@ use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class SiteUserType extends AbstractType
+class SiteUserUpdateType extends AbstractType
 {
     /**
      * {@inheritdoc}
@@ -23,21 +23,13 @@ class SiteUserType extends AbstractType
             ->add('firstName')
             ->add('username')
             ->add('email')
-            ->add('plainPassword', RepeatedType::class, array(
-                'type' => PasswordType::class,
-                'invalid_message' => 'The password fields must match.',
-                'options' => array('attr' => array('class' => 'password-field')),
-                'required' => true,
-                'first_options'  => array('label' => 'Password'),
-                'second_options' => array('label' => 'Repeat Password'),
-            ))
             ->add('birthday', DateType::class, array(
                 'years'  => range(date('Y') - 100, date('Y') - 10)
             ))
             ->add('hunterPlace')
             ->add('experience')
             ->add('hunterType')
-            ->add('S\'inscrire', SubmitType::class);
+            ->add('Modifier', SubmitType::class);
     }
     
     /**

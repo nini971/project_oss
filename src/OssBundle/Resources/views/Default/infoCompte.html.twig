@@ -1,0 +1,15 @@
+{% if app.user %}
+    <h1>Information du compte</h1>
+    <section class="infoCompte">
+        <h1>{{ app.user.firstname }} {{ app.user.lastname }}</h1>
+        <p>Pseudo : <em>{{ app.user.username }}</em></p>
+        <p>Email : <em>{{ app.user.email }}</em></p>
+        <p>Date de naissance : <em>{{ site_user.birthday | date('d/M/Y') }}</em></p>
+        <p>Lieux de chasse favori : <em>{{ site_user.hunterPlace }}</em></p>
+        <p>Expérience : <em>{{ site_user.experience }}</em></p>
+
+        <div><button id="modifier" data-color="menuaccueil" data-lien="/modifierCompte">Modifier</button></div>
+    </section>
+{% else %}
+    Vous n'êtes pas connecté !
+{% endif %}

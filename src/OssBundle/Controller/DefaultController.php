@@ -5,6 +5,7 @@ namespace OssBundle\Controller;
 use OssBundle\Entity\SiteUser;
 use OssBundle\Entity\Spot;
 use OssBundle\Form\SiteUserType;
+use OssBundle\Form\SiteUserUpdateType;
 use OssBundle\Form\SpotType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
@@ -84,4 +85,39 @@ class DefaultController extends Controller
 
         return $this->render('OssBundle:Default:addSpot.html.twig', ["form"=>$form->createView(), "fishs"=>$fishs]);
     }
+
+    /**
+     * @Route("/infoCompte", name="oss.infoCompte")
+     */
+    public function infoCompteAction()
+    {
+        $user = $this->getUser();
+        $siteUser = $this->getDoctrine()->getRepository('OssBundle:SiteUser')->find($user->getId());
+//        dump($siteUser);die();
+        return $this->render('OssBundle:Default:infoCompte.html.twig', ['site_user'=>$siteUser]);
+    }
+
+    /**
+     * @Route("/modifierCompte", name="oss.modifierCompte")
+     */
+    public function modifierCompteAction(Request $request)
+    {
+        $user = $this->getUser();
+        $siteUser = $this->getDoctrine()->getRepository('OssBundle:SiteUser')->find($user->getId());
+        $form =$this->createForm(SiteUserUpdateType::class, $siteUser);
+
+        $form->handleRequest($request);
+        if($form->isSubmitted() && $form->isValid()){
+            //Persister l'objet
+            $em=$this->getDoctrine()->getManager();
+            $em->persist($siteUser);
+            $em->flush();
+
+            return $this->redirectToRoute("oss.index");
+        }
+
+        return $this->render('OssBundle:Default:modifCompte.html.twig', ["form"=>$form->createView()]);
+    }
+
+
 }

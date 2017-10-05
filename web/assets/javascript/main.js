@@ -10,14 +10,14 @@ function displayFish(name, id) {
 }
 
 function deleteFishInFrom(id, name) {
-    console.log('suppresion du ' + name);
+    // console.log('suppresion du ' + name);
     $('#select_fish').append('<option value="'+ id +'">'+ name +'</option>');
-    console.log('<option value="'+ id +'">'+ name +'</option>');
-    console.log('contenu de list ID : ' + id_fish_add);
+    // console.log('<option value="'+ id +'">'+ name +'</option>');
+    // console.log('contenu de list ID : ' + id_fish_add);
     id_fish_add.splice(id_fish_add.indexOf(id), 1);
-    console.log('contenu de list ID  après modif : ' + id_fish_add);
+    // console.log('contenu de list ID  après modif : ' + id_fish_add);
 
-    console.log(data_post_form);
+    // console.log(data_post_form);
 
     var indexDataFish;
     data_post_form.forEach(function (el, index) {
@@ -27,7 +27,7 @@ function deleteFishInFrom(id, name) {
         }
     });
 
-    console.log(data_post_form);
+    // console.log(data_post_form);
 
     $('.btn_delete_fish').each(function (index, el) {
         if ($(el).attr('data-id') == id){
@@ -66,35 +66,35 @@ function check() {
         document.getElementById("message").innerHTML = "Error !";
     }
 }
-// check mail dans formu inscription
-function checkXhrEmail(evt) {
-    var cible = evt.target;
-
-    if (cible.readyState == cible.DONE) {
-        if (cible.status == 200) {
-            console.log('bon : ' + cible);
-            if (cible.responseText == 'true') {
-                console.log('pas dans la base');
-                document.getElementById("email_check").innerHTML = 'Ok !';
-            } else if (cible.responseText == 'false') {
-                document.getElementById("email_check").innerHTML = 'Email existant !';
-            } else {
-                document.getElementById("email_check").innerHTML = 'Erreur !';
-            }
-        }
-    }
-}
-
-function checkEmail(evt) {
-    var formD = new FormData(document.getElementById("formInsc"));
-    var xhr = new XMLHttpRequest();
-
-    xhr.onreadystatechange = checkXhrEmail;
-    xhr.open("POST", "check_email.php");
-    xhr.send(formD);
-
-
-}
+// // check mail dans formu inscription
+// function checkXhrEmail(evt) {
+//     var cible = evt.target;
+//
+//     if (cible.readyState == cible.DONE) {
+//         if (cible.status == 200) {
+//             console.log('bon : ' + cible);
+//             if (cible.responseText == 'true') {
+//                 console.log('pas dans la base');
+//                 document.getElementById("email_check").innerHTML = 'Ok !';
+//             } else if (cible.responseText == 'false') {
+//                 document.getElementById("email_check").innerHTML = 'Email existant !';
+//             } else {
+//                 document.getElementById("email_check").innerHTML = 'Erreur !';
+//             }
+//         }
+//     }
+// }
+//
+// function checkEmail(evt) {
+//     var formD = new FormData(document.getElementById("formInsc"));
+//     var xhr = new XMLHttpRequest();
+//
+//     xhr.onreadystatechange = checkXhrEmail;
+//     xhr.open("POST", "check_email.php");
+//     xhr.send(formD);
+//
+//
+// }
 
 /*function initialisation() {
  var optionsCarte = {
@@ -104,11 +104,11 @@ function checkEmail(evt) {
  var maCarte = new google.maps.Map(document.getElementById("map"), optionsCarte);
  }*/
 // init pour la formulaire d'inscription et infoCompte
-function init_maj() {
-    // var email_ins = document.getElementById("email_ins");
-    // email_ins.addEventListener("blur", checkEmail);
-
-}
+// function init_maj() {
+//     // var email_ins = document.getElementById("email_ins");
+//     // email_ins.addEventListener("blur", checkEmail);
+//
+// }
 
 function changePage(evt) {
     var cible = evt.target;
@@ -136,19 +136,17 @@ function changePage(evt) {
 }
 
 function majAccueil(evt) {
-    var main = document.getElementById("main");
     var cible = evt.target;
-
-    console.log('debu ');
     if (cible.readyState == cible.DONE) {
-        console.log('Fini ');
         if (cible.status == 200) {
-            console.log('Fini OK : ' + cible.responseURL);
+            var main = document.getElementById("main");
+            console.log('start majaccueil');
+            console.log('URL majaccueil : ' + cible.responseURL);
             main.innerHTML = cible.responseText;
 
             // if (cible.responseURL == 'http://localhost:8000/inscriptio') {
-            if ( $("#form_inscription")) {
-                console.log("page inscription");
+            if ( $("#form_inscription").length ) {
+                console.log("form_inscription");
 
                 $("#form_inscription").submit( function(event) {
                     console.log("le form est submit");
@@ -156,7 +154,6 @@ function majAccueil(evt) {
                     event.preventDefault();
                     var $this = $(this);
                     console.log($this.serialize());
-                    //Ici on peut ajouter un loader...
                     $.ajax({
                         url: '/inscription',
                         type: 'POST',
@@ -168,10 +165,30 @@ function majAccueil(evt) {
                             //document.location.href=result;
                         }
                     });
-                })
-                init_maj();
+                });
             }
-            if (jQuery('#form_spot')){
+            if ( $("#form_modif").length ) {
+                console.log("form_modif");
+
+                $("#form_modif").submit( function(event) {
+                    console.log("le form est submit");
+
+                    event.preventDefault();
+                    var $this = $(this);
+                    $.ajax({
+                        url: '/modifierCompte',
+                        type: 'POST',
+                        data: $this.serialize(),
+                        success: function(result){
+                            document.open();
+                            document.write(result);
+                            document.close();
+                            //document.location.href=result;
+                        }
+                    });
+                });
+            }
+            if (jQuery('#form_spot').length){
                 data_post_form = [];
                 $('#ossbundle_spot_spotAcces').prop('required',false);
                 $('#ossbundle_spot_Submit').prop('disabled', false);
@@ -294,54 +311,42 @@ function majAccueil(evt) {
 }
 
 function majTopBlock(e) {
-    var topBlock = document.getElementById("top_block");
     var cible = e.target;
-    console.log(cible);
-
-
     if (cible.readyState == cible.DONE) {
         if (cible.status == 200) {
+            console.log('start start majtopblock ');
+            var topBlock = document.getElementById("top_block");
             topBlock.innerHTML = cible.responseText;
-            var ins = document.getElementById("inscription");
 
-            if (ins) ins.onclick = changePage;
-
-
-            var infoCompte = document.getElementById("infoCompte");
-            if (infoCompte) {
-                console.log('id present');
-                infoCompte.preventDefault;
-                infoCompte.onclick = changePage;
+            var $inscription = $('#inscription');
+            if ($inscription.length){
+                $inscription.click(changePage);
             }
-            var email = document.getElementById("email");
-            var password = document.getElementById("password");
-            if (email || password) {
-                // email.onfocus = function () {
-                //     email.classList.remove("noCheck");
-                // };
-                // password.onfocus = function () {
-                //     password.classList.remove("noCheck");
-                // };
+
+            var $infoCompte = $('#infoCompte');
+            if ($infoCompte.length) {
+                $infoCompte.preventDefault;
+                $infoCompte.click(changePage);
             }
         }
     }
 
 }
 
-function identification() {
-    var req = new XMLHttpRequest();
+function launchRequestMajTopBlock() {
+    console.log('start launchRequestMajTopBlock()');
+    var reqIndentification = new XMLHttpRequest();
 
-    req.onreadystatechange = majTopBlock;
-    req.open('POST', '/login');
-    req.send();
+    reqIndentification.onreadystatechange = majTopBlock;
+    reqIndentification.open('POST', '/login');
+    reqIndentification.send();
 
 }
 
 
 function init() {
 
-
-    identification();
+    launchRequestMajTopBlock();
 
     var tabMenu = [document.getElementById("accueil"), document.getElementById("carte"), document.getElementById("spot"), document.getElementById("ajout"), document.getElementById("glossaire")];
 
